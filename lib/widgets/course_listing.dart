@@ -60,10 +60,30 @@ class _CourseListingState extends State<CourseListing> {
     final course = Course.fromSnapshot(data);
     return Container(
       margin: EdgeInsets.only(bottom: 10.0),
-      padding: EdgeInsets.all(10.0),
-      child: Column(
+      height: 100.0,
+      child: Stack(
         children: <Widget>[
-          Text(course.name, style: TextStyle(color: Colors.black),)
+          Row(
+            children: <Widget>[
+              Container(
+                width: 12.0,
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.only(
+                      topLeft: const Radius.circular(9.0),
+                      bottomLeft: const Radius.circular(9.0)),
+                ),
+              ),
+              Column(
+                children: <Widget>[
+                  Text(
+                    course.name,
+                    style: TextStyle(color: Colors.black),
+                  )
+                ],
+              )
+            ],
+          )
         ],
       ),
       decoration: BoxDecoration(
